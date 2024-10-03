@@ -2,4 +2,12 @@
 <resources>
 
     <style name="Theme.FreshCart" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_ic</item>
+        <item name="postSplashScreenTheme">@style/Theme.FreshCart</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
 </resources>
