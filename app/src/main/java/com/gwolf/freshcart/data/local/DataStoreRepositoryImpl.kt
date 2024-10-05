@@ -1,4 +1,4 @@
-package com.gwolf.bigcart.data.local.repository
+package com.gwolf.freshcart.data.local
 
 import android.content.Context
 import androidx.datastore.core.DataStore

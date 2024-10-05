@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">FreshCart</string>
+    <string name="onboarding_title_1">Ласкаво просимо до </string>
+    <string name="onboarding_desc_1">Зручні та швидкі покупки продуктів онлайн, щоб ваше життя стало простішим!</string>
+    <string name="onboarding_title_2">Завжди свіжі продукти </string>
+    <string name="onboarding_desc_2">Обирайте тільки якісне – швидко, зручно та без зайвих турбот.</string>
+    <string name="onboarding_title_3">Простий шлях до свіжих продукті</string>
+    <string name="onboarding_desc_3">Забудьте про черги та довгі поїздки – отримуйте якісні продукти прямо до вашого дому швидко та зручно</string>
+    <string name="onboarding_title_4">Свіжі продукти зі знижками щодня</string>
+    <string name="onboarding_desc_4">Економте на кожній покупці – свіжі продукти за доступними цінами чекають на вас!</string>
+    <string name="title_next">Далі</string>
+    <string name="title_start">Почати</string>
 </resources>

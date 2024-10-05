@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.gwolf.freshcart.presentation.screen.welcome.WelcomeScreen
 
 @Composable
 fun SetupNavGraph(
@@ -30,7 +31,9 @@ fun SetupNavGraph(
         startDestination = startDestination
     ) {
         composable<Screen.Welcome> {
-
+            WelcomeScreen(
+                navController = navController
+            )
         }
         composable<Screen.Auth> {
 

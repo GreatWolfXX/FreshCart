@@ -5,7 +5,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gwolf.bigcart.data.local.repository.PreferencesKey
+import com.gwolf.freshcart.data.local.PreferencesKey
 import com.gwolf.freshcart.domain.usecase.preference.ReadBooleanPreferenceUseCase
 import com.gwolf.freshcart.navigation.Screen
 import kotlinx.coroutines.launch

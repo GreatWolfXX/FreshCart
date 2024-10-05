@@ -1,7 +1,7 @@
 package com.gwolf.freshcart.di
 
 import android.content.Context
-import com.gwolf.bigcart.data.local.repository.DataStoreRepositoryImpl
+import com.gwolf.freshcart.data.local.DataStoreRepositoryImpl
 import com.gwolf.freshcart.domain.repository.DataStoreRepository
 import dagger.Module
 import dagger.Provides
