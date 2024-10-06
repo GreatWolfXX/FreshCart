@@ -14,6 +14,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gwolf.freshcart.presentation.screen.auth.AuthScreen
+import com.gwolf.freshcart.presentation.screen.login.LoginScreen
 import com.gwolf.freshcart.presentation.screen.welcome.WelcomeScreen
 
 @Composable
@@ -42,7 +43,9 @@ fun SetupNavGraph(
             )
         }
         composable<Screen.Login> {
-
+            LoginScreen(
+                navController = navController
+            )
         }
         composable<Screen.Registration> {
 

@@ -16,4 +16,20 @@
     <string name="title_create_account">Створити обліковий запис</string>
     <string name="already_have">Вже маєте обліковий запис?\u0020</string>
     <string name="login">Увійдіть</string>
+    <string name="login_title">З поверненням!</string>
+    <string name="login_desc">Увійдіть до свого облікового запису</string>
+    <string name="remember_me">Запам\'ятати мене</string>
+    <string name="forgot_password">Забули пароль</string>
+    <string name="dont_have">Не маєте облікового запису?\u0020</string>
+    <string name="sign_up">Зареєструйтесь</string>
+    <string name="email_address">Електронна пошта</string>
+    <string name="password_placeholder">Пароль</string>
+
+
+    <string name="err_field_empty">Поле не повинно бути порожнім!</string>
+    <string name="err_password_length">Пароль повинен містити менше $s символів!</string>
+    <string name="err_email_valid">Введений email є недійсним!</string>
+    <string name="err_password_valid">Введений пароль повинен містити принаймні одну літеру та цифру!</string>
+    <string name="err_repeat_password_valid">Паролі повинні бути однаковими!</string>
+    <string name="err_phone_number_valid">Номер телефону повинен починатися з + і складатися тільки з цифр!</string>
 </resources>

@@ -66,7 +66,7 @@ fun CustomButton(
                 Icon(
                     imageVector = btnIcon,
                     contentDescription = null,
-                    tint = Color.Unspecified
+                    tint = if(isStandardStyle) Color.White else Color.Unspecified
                 )
                 Spacer(modifier = Modifier.size(8.dp))
             } else {

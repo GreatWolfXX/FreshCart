@@ -13,8 +13,11 @@ val Pink40 = Color(0xFF7D5260)
 
 val Primary= Color(0xFF66CC99)
 val PrimaryDark = Color(0xFF339966)
+val PrimaryLight = Color(0xFFD3FEEA)
 val Background = Color(0xFFF4F5F9)
 val SecondaryText = Color(0xFF868889)
+val ErrorColor = Color(0xFFFE585A)
+val LinkColor = Color(0xFF284777)
 
 val ButtonGradient = Brush.horizontalGradient(
     0.0f to Primary,
