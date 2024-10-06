@@ -10,4 +10,10 @@
     <string name="onboarding_desc_4">Економте на кожній покупці – свіжі продукти за доступними цінами чекають на вас!</string>
     <string name="title_next">Далі</string>
     <string name="title_start">Почати</string>
+    <string name="title_welcome">Вітаємо</string>
+    <string name="auth_desc">Обирайте зручний спосіб входу, щоб швидко почати покупки.</string>
+    <string name="title_continue_google">Продовжити з Google</string>
+    <string name="title_create_account">Створити обліковий запис</string>
+    <string name="already_have">Вже маєте обліковий запис?\u0020</string>
+    <string name="login">Увійдіть</string>
 </resources>

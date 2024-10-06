@@ -1,6 +1,5 @@
 package com.gwolf.freshcart.presentation.component
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -8,6 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -35,13 +35,13 @@ enum class CustomButtonStyle{
 
 @Composable
 fun CustomButton(
-    @DrawableRes icon: Int = 0,
+    icon: ImageVector? = null,
     @StringRes text: Int,
     style: CustomButtonStyle = CustomButtonStyle.STANDARD,
     onClick: () -> Unit
 ) {
     val isStandardStyle = style == CustomButtonStyle.STANDARD
-    val btnIcon = if(isStandardStyle) icon else R.drawable.google_ic
+    val btnIcon = if(isStandardStyle) icon else ImageVector.vectorResource(R.drawable.google_ic)
     val bgColor = if(isStandardStyle) Color.Transparent else Color.White
     Button(
         modifier = Modifier
@@ -59,15 +59,16 @@ fun CustomButton(
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            if(btnIcon != 0) {
+            if(btnIcon != null) {
                 Icon(
-                    imageVector = ImageVector.vectorResource(id = btnIcon),
+                    imageVector = btnIcon,
                     contentDescription = null,
                     tint = Color.Unspecified
                 )
+                Spacer(modifier = Modifier.size(8.dp))
             } else {
                 Spacer(modifier = Modifier)
             }
@@ -76,7 +77,7 @@ fun CustomButton(
                 text = stringResource(id = text),
                 fontFamily = robotoFontFamily,
                 fontWeight = FontWeight.Medium,
-                fontSize = 20.sp,
+                fontSize = 14.sp,
                 color = if(isStandardStyle) Color.White else Color.Black
             )
             Spacer(modifier = Modifier)
