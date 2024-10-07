@@ -33,7 +33,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gwolf.freshcart.ui.theme.ErrorColor
-import com.gwolf.freshcart.ui.theme.SecondaryText
+import com.gwolf.freshcart.ui.theme.SecondaryTextColor
 import com.gwolf.freshcart.ui.theme.robotoFontFamily
 import com.gwolf.freshcart.util.UiText
 
@@ -77,7 +77,7 @@ fun CustomTextInput(
                 .fillMaxWidth()
                 .border(
                     width = 1.dp,
-                    color = SecondaryText,
+                    color = SecondaryTextColor,
                     shape = RoundedCornerShape(4.dp)
                 ),
             value = text,
@@ -109,7 +109,7 @@ fun CustomTextInput(
                     fontFamily = robotoFontFamily,
                     fontWeight = FontWeight.Normal,
                     fontSize = 16.sp,
-                    color = SecondaryText
+                    color = SecondaryTextColor
                 )
             },
             prefix = {
@@ -117,7 +117,7 @@ fun CustomTextInput(
                     modifier = Modifier.padding(start = 4.dp, end = 4.dp),
                     imageVector = icon,
                     contentDescription = null,
-                    tint = SecondaryText
+                    tint = SecondaryTextColor
                 )
             },
             trailingIcon = if(style == CustomTextInputStyle.PASSWORD) {
@@ -130,7 +130,7 @@ fun CustomTextInput(
                         Icon(
                             imageVector  = iconVisibility,
                             contentDescription = null,
-                            tint = SecondaryText
+                            tint = SecondaryTextColor
                         )
                     }
                 }

@@ -1,12 +1,6 @@
 package com.gwolf.freshcart.navigation
 
-import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavDestination
 import kotlinx.serialization.Serializable
-import kotlin.let
-import kotlin.reflect.KClass
-import kotlin.text.substringAfterLast
-import kotlin.text.substringBefore
 
 
 @Serializable

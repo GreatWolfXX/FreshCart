@@ -1,4 +1,4 @@
-package com.gwolf.freshcart.domain.usecase.usecase.validate
+package com.gwolf.freshcart.domain.usecase.validate
 
 import com.gwolf.freshcart.R
 import com.gwolf.freshcart.domain.model.ValidationResult

@@ -37,7 +37,7 @@ import androidx.navigation.NavController
 import com.gwolf.freshcart.R
 import com.gwolf.freshcart.navigation.Screen
 import com.gwolf.freshcart.presentation.component.CustomButton
-import com.gwolf.freshcart.ui.theme.PrimaryDark
+import com.gwolf.freshcart.ui.theme.PrimaryDarkColor
 import com.gwolf.freshcart.ui.theme.robotoFontFamily
 import kotlinx.coroutines.launch
 
@@ -102,7 +102,7 @@ private fun PagerIndicator(
     ) {
         repeat(pagerState.pageCount) { iteration ->
             val color =
-                if (pagerState.currentPage == iteration) PrimaryDark else Color.White
+                if (pagerState.currentPage == iteration) PrimaryDarkColor else Color.White
             Box(
                 modifier = Modifier
                     .padding(4.dp)

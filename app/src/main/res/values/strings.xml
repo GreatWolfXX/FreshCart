@@ -24,6 +24,10 @@
     <string name="sign_up">Зареєструйтесь</string>
     <string name="email_address">Електронна пошта</string>
     <string name="password_placeholder">Пароль</string>
+    <string name="repeat_password_placeholder">Повторіть пароль</string>
+    <string name="create_account">Створити обліковий запис</string>
+    <string name="create_account_desc">Швидке створення облікового запису</string>
+    <string name="signup">Зареєструватись</string>
 
 
     <string name="err_field_empty">Поле не повинно бути порожнім!</string>

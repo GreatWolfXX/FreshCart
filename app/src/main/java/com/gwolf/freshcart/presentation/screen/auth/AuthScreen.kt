@@ -33,8 +33,8 @@ import com.gwolf.freshcart.navigation.Screen
 import com.gwolf.freshcart.presentation.component.CustomButton
 import com.gwolf.freshcart.presentation.component.CustomButtonStyle
 import com.gwolf.freshcart.presentation.component.TopAuthMenu
-import com.gwolf.freshcart.ui.theme.Background
-import com.gwolf.freshcart.ui.theme.SecondaryText
+import com.gwolf.freshcart.ui.theme.BackgroundColor
+import com.gwolf.freshcart.ui.theme.SecondaryTextColor
 import com.gwolf.freshcart.ui.theme.robotoFontFamily
 
 @Composable
@@ -64,7 +64,7 @@ private fun BoxScope.AuthContent(
             .fillMaxWidth()
             .align(Alignment.BottomCenter)
             .background(
-                color = Background,
+                color = BackgroundColor,
                 shape = RoundedCornerShape(topStart = 10.dp, topEnd = 10.dp)
             )
             .padding(start = 16.dp, top = 32.dp, end = 16.dp, bottom = 40.dp)
@@ -84,7 +84,7 @@ private fun BoxScope.AuthContent(
             fontFamily = robotoFontFamily,
             fontWeight = FontWeight.Normal,
             fontSize = 14.sp,
-            color = SecondaryText
+            color = SecondaryTextColor
         )
         Spacer(modifier = Modifier.size(32.dp))
         CustomButton(
@@ -115,7 +115,7 @@ private fun BoxScope.AuthContent(
                 fontFamily = robotoFontFamily,
                 fontWeight = FontWeight.Medium,
                 fontSize = 14.sp,
-                color = SecondaryText
+                color = SecondaryTextColor
             )
             Text(
                 modifier = Modifier,

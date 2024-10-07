@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gwolf.freshcart.domain.usecase.preference.SaveBooleanPreferenceUseCase
-import com.gwolf.freshcart.domain.usecase.usecase.validate.ValidateEmailUseCase
-import com.gwolf.freshcart.domain.usecase.usecase.validate.ValidatePasswordUseCase
+import com.gwolf.freshcart.domain.usecase.validate.ValidateEmailUseCase
+import com.gwolf.freshcart.domain.usecase.validate.ValidatePasswordUseCase
 import com.gwolf.freshcart.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
