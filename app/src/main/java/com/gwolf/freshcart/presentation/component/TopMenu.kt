@@ -1,5 +1,6 @@
 package com.gwolf.freshcart.presentation.component
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.BoxScope
@@ -15,16 +16,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.gwolf.freshcart.R
 import com.gwolf.freshcart.ui.theme.robotoFontFamily
 
 @Composable
-fun BoxScope.TopAuthMenu(
-    onClickBack: () -> Unit
+fun BoxScope.TopMenu(
+    @StringRes title: Int,
+    menuIcon: ImageVector? = null,
+    color: Color = Color.White,
+    onClickBack: () -> Unit,
+    onClickMenu: () -> Unit = {}
 ) {
     Row(
         modifier = Modifier
@@ -40,16 +45,27 @@ fun BoxScope.TopAuthMenu(
             },
             imageVector = Icons.AutoMirrored.Filled.KeyboardBackspace,
             contentDescription = null,
-            tint = Color.White
+            tint = color
         )
         Text(
             modifier = Modifier,
-            text = stringResource(id = R.string.title_welcome),
+            text = stringResource(id = title),
             fontFamily = robotoFontFamily,
             fontWeight = FontWeight.Normal,
             fontSize = 22.sp,
-            color = Color.White
+            color = color
         )
-        Spacer(modifier = Modifier)
+        if(menuIcon != null) {
+            Icon(
+                modifier = Modifier.clickable {
+                    onClickMenu.invoke()
+                },
+                imageVector = menuIcon,
+                contentDescription = null,
+                tint = color
+            )
+        } else {
+            Spacer(modifier = Modifier)
+        }
     }
 }

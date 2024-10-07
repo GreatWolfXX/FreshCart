@@ -28,6 +28,9 @@
     <string name="create_account">Створити обліковий запис</string>
     <string name="create_account_desc">Швидке створення облікового запису</string>
     <string name="signup">Зареєструватись</string>
+    <string name="title_password_recovery">Відновлення пароля</string>
+    <string name="password_recovery_desc">Введіть свою електронну адресу, і ми надішлемо вам інструкції для відновлення паролю.</string>
+    <string name="send_link">Надіслати посилання</string>
 
 
     <string name="err_field_empty">Поле не повинно бути порожнім!</string>

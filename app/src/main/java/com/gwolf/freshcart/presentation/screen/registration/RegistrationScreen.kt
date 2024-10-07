@@ -42,7 +42,7 @@ import com.gwolf.freshcart.navigation.Screen
 import com.gwolf.freshcart.presentation.component.CustomButton
 import com.gwolf.freshcart.presentation.component.CustomTextInput
 import com.gwolf.freshcart.presentation.component.CustomTextInputStyle
-import com.gwolf.freshcart.presentation.component.TopAuthMenu
+import com.gwolf.freshcart.presentation.component.TopMenu
 import com.gwolf.freshcart.ui.theme.BackgroundColor
 import com.gwolf.freshcart.ui.theme.ErrorColor
 import com.gwolf.freshcart.ui.theme.SecondaryTextColor
@@ -69,9 +69,12 @@ fun RegistrationScreen(
             contentDescription = null,
             contentScale = ContentScale.Crop
         )
-        TopAuthMenu() {
-            navController.navigateUp()
-        }
+        TopMenu(
+            title = R.string.title_welcome,
+            onClickBack = {
+                navController.navigateUp()
+            }
+        )
         RegistrationContent(
             context = context,
             navController = navController,
