@@ -4,7 +4,9 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gwolf.freshcart.domain.usecase.auth.ForgotPasswordUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidateEmailUseCase
+import com.gwolf.freshcart.util.UiResult
 import com.gwolf.freshcart.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -26,7 +28,7 @@ sealed class ForgotPasswordEvent {
 @HiltViewModel
 class ForgotPasswordViewModel @Inject constructor(
     private val validateEmailUseCase: ValidateEmailUseCase,
-//    private val forgotPasswordUseCase: ForgotPasswordUseCase
+    private val forgotPasswordUseCase: ForgotPasswordUseCase
 ) : ViewModel() {
 
     private val _formState = mutableStateOf(ForgotPasswordUiState())
@@ -49,23 +51,23 @@ class ForgotPasswordViewModel @Inject constructor(
     private fun forgotPassword() {
         viewModelScope.launch {
             _formState.value = _formState.value.copy(isLoading = true)
-//            forgotPasswordUseCase.invoke(_formState.value.email).collect { result ->
-//                when(result) {
-//                    is Result.Success -> {
-//                        _formState.value = _formState.value.copy(
-//                            forgotPasswordSuccess = true,
-//                            isLoading = false
-//                        )
-//                    }
-//
-//                    is Result.Error -> {
-//                        _formState.value = _formState.value.copy(
-//                            forgotPasswordError = UiText.DynamicString(result.exception.message!!),
-//                            isLoading = false
-//                        )
-//                    }
-//                }
-//            }
+            forgotPasswordUseCase.invoke(_formState.value.email).collect { result ->
+                when(result) {
+                    is UiResult.Success -> {
+                        _formState.value = _formState.value.copy(
+                            forgotPasswordSuccess = true,
+                            isLoading = false
+                        )
+                    }
+
+                    is UiResult.Error -> {
+                        _formState.value = _formState.value.copy(
+                            forgotPasswordError = UiText.DynamicString(result.exception.message!!),
+                            isLoading = false
+                        )
+                    }
+                }
+            }
         }
     }
 

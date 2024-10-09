@@ -4,9 +4,11 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gwolf.freshcart.domain.usecase.auth.SignUpUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidateEmailUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidatePasswordUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidateRepeatPasswordUseCase
+import com.gwolf.freshcart.util.UiResult
 import com.gwolf.freshcart.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -42,7 +44,7 @@ class RegistrationViewModel @Inject constructor(
     private val validateEmailUseCase: ValidateEmailUseCase,
     private val validatePasswordUseCase: ValidatePasswordUseCase,
     private val validateRepeatPasswordUseCase: ValidateRepeatPasswordUseCase,
-//    private val signUpUseCase: SignUpUseCase
+    private val signUpUseCase: SignUpUseCase
 ) : ViewModel() {
 
     private val _formState = mutableStateOf(RegistrationUiState())
@@ -76,22 +78,22 @@ class RegistrationViewModel @Inject constructor(
     private fun signUpUser() {
         viewModelScope.launch {
             _formState.value = _formState.value.copy(isLoading = true)
-//            signUpUseCase.invoke(_formState.value.email, _formState.value.password).collect { result ->
-//                when(result) {
-//                    is Result.Success -> {
-//                        _formState.value = _formState.value.copy(
-//                            sigUpSuccess = true,
-//                            isLoading = false
-//                        )
-//                    }
-//                    is Result.Error -> {
-//                        _formState.value = _formState.value.copy(
-//                            sigUpError = UiText.DynamicString(result.exception.message!!),
-//                            isLoading = false
-//                        )
-//                    }
-//                }
-//            }
+            signUpUseCase.invoke(_formState.value.email, _formState.value.password).collect { result ->
+                when(result) {
+                    is UiResult.Success -> {
+                        _formState.value = _formState.value.copy(
+                            sigUpSuccess = true,
+                            isLoading = false
+                        )
+                    }
+                    is UiResult.Error -> {
+                        _formState.value = _formState.value.copy(
+                            sigUpError = UiText.DynamicString(result.exception.message!!),
+                            isLoading = false
+                        )
+                    }
+                }
+            }
         }
     }
 

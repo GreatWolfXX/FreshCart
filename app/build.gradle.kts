@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.serialization)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -70,6 +71,9 @@ dependencies {
 
     implementation(libs.google.fonts)
     implementation(libs.material.icons)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
 
     implementation(libs.splashscreen)
 }

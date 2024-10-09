@@ -4,9 +4,12 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gwolf.freshcart.data.local.PreferencesKey
+import com.gwolf.freshcart.domain.usecase.auth.SignInUseCase
 import com.gwolf.freshcart.domain.usecase.preference.SaveBooleanPreferenceUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidateEmailUseCase
 import com.gwolf.freshcart.domain.usecase.validate.ValidatePasswordUseCase
+import com.gwolf.freshcart.util.UiResult
 import com.gwolf.freshcart.util.UiText
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -37,7 +40,7 @@ class LoginViewModel @Inject constructor(
     private val validateEmailUseCase: ValidateEmailUseCase,
     private val validatePasswordUseCase: ValidatePasswordUseCase,
     private val saveBooleanPreferenceUseCase: SaveBooleanPreferenceUseCase,
-//    private val signInUseCase: SignInUseCase
+    private val signInUseCase: SignInUseCase
 ) : ViewModel() {
 
     private val _formState = mutableStateOf(LoginUiState())
@@ -70,26 +73,26 @@ class LoginViewModel @Inject constructor(
     private fun signInUser() {
         viewModelScope.launch {
             _formState.value = _formState.value.copy(isLoading = true)
-//            signInUseCase.invoke(_formState.value.email, _formState.value.password).collect { result ->
-//                when(result) {
-//                    is UiResult.Success -> {
-//                        saveBooleanPreferenceUseCase.invoke(
-//                            key = PreferencesKey.rememberUserKey,
-//                            value = _formState.value.isRemember
-//                        )
-//                        _formState.value = _formState.value.copy(
-//                            sigInSuccess = true,
-//                            isLoading = false
-//                        )
-//                    }
-//                    is UiResult.Error -> {
-//                        _formState.value = _formState.value.copy(
-//                            sigInError = UiText.DynamicString(result.exception.message!!),
-//                            isLoading = false
-//                        )
-//                    }
-//                }
-//            }
+            signInUseCase.invoke(_formState.value.email, _formState.value.password).collect { result ->
+                when(result) {
+                    is UiResult.Success -> {
+                        saveBooleanPreferenceUseCase.invoke(
+                            key = PreferencesKey.rememberUserKey,
+                            value = _formState.value.isRemember
+                        )
+                        _formState.value = _formState.value.copy(
+                            sigInSuccess = true,
+                            isLoading = false
+                        )
+                    }
+                    is UiResult.Error -> {
+                        _formState.value = _formState.value.copy(
+                            sigInError = UiText.DynamicString(result.exception.message!!),
+                            isLoading = false
+                        )
+                    }
+                }
+            }
         }
     }
 
